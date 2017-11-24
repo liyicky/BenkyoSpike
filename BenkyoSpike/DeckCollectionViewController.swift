@@ -72,7 +72,7 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func recordTapped() {
+    @objc func recordTapped() {
         NSLog("Record Tapped")
         if audioRecorder == nil {
             startRecording()
@@ -120,7 +120,7 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func playRecording() {
+    @objc func playRecording() {
         
         do {
             let sound = try AVAudioPlayer(contentsOf: audioRecorder.url)
@@ -135,7 +135,7 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
     }
     
-    func listenTapped() {
+    @objc func listenTapped() {
         
         let testUtterance = AVSpeechUtterance(string: "僕の海は猫になるだ")
         testUtterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
@@ -143,7 +143,7 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
         synth.speak(testUtterance)
     }
     
-    func startQuiz() {
+    @objc func startQuiz() {
 //        cardsCV?.scrollToItem(at: IndexPath(row: 0, section: 0),
 //                                          at: .top,
 //                                          animated: true)

@@ -24,7 +24,7 @@ class TestController: UIViewController {
         let screenHeight: CGFloat = (self.scrollView?.bounds.size.height)!
         
         self.scrollView?.contentSize = CGSize(width: screenWidth * 4, height: (self.scrollView?.bounds.size.height)!)
-        
+        scrollView?.isPagingEnabled = true
         
         self.button1 = UIButton(frame: CGRect(x: screenWidth/2, y: screenHeight/2, width: 100, height: 50))
         button1.backgroundColor = .green

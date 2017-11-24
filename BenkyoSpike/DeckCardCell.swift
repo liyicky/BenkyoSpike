@@ -49,8 +49,8 @@ class DeckCardCell: UICollectionViewCell {
         
      
         // TODO: LAZY LOAD SETUP
-//        DatabaseThing().setupDB()
-//        DatabaseThing().addTestData()
+        DatabaseThing().setupDB()
+        DatabaseThing().addTestData()
         let db = DatabaseThing().theDB()
         
         
@@ -65,7 +65,7 @@ class DeckCardCell: UICollectionViewCell {
     }
     
     
-    func tapped() {
+    @objc func tapped() {
         NSLog("\(DeckCardCell.identifier) :Tapped!")
         flipCard(animated: true)
     }

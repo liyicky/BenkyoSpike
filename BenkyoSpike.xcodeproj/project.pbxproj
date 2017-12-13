@@ -17,6 +17,9 @@
 		5CA2E9561DE1AB7900E2929D /* DeckCardBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CA2E9541DE1AB7900E2929D /* DeckCardBackView.xib */; };
 		5CA2E95B1DE2125C00E2929D /* DeckCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA2E95A1DE2125C00E2929D /* DeckCardCell.swift */; };
 		5CA2E95D1DE21DE600E2929D /* DeckCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CA2E95C1DE21DE600E2929D /* DeckCardCell.xib */; };
+		5CD890071FE0356C001DA054 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD890061FE0356C001DA054 /* Deck.swift */; };
+		5CD890091FE0357B001DA054 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD890081FE0357B001DA054 /* Card.swift */; };
+		5CD8900B1FE17E7D001DA054 /* Cards.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CD8900A1FE17E7C001DA054 /* Cards.plist */; };
 		5CE7B6DA1D950FB700AAD7BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B6D91D950FB700AAD7BB /* AppDelegate.swift */; };
 		5CE7B6DC1D950FB700AAD7BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B6DB1D950FB700AAD7BB /* MainViewController.swift */; };
 		5CE7B6DF1D950FB700AAD7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE7B6DD1D950FB700AAD7BB /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 		5CA2E9541DE1AB7900E2929D /* DeckCardBackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeckCardBackView.xib; sourceTree = "<group>"; };
 		5CA2E95A1DE2125C00E2929D /* DeckCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckCardCell.swift; sourceTree = "<group>"; };
 		5CA2E95C1DE21DE600E2929D /* DeckCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeckCardCell.xib; sourceTree = "<group>"; };
+		5CD890061FE0356C001DA054 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		5CD890081FE0357B001DA054 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		5CD8900A1FE17E7C001DA054 /* Cards.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Cards.plist; sourceTree = "<group>"; };
 		5CE7B6D61D950FB700AAD7BB /* BenkyoSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BenkyoSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE7B6D91D950FB700AAD7BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CE7B6DB1D950FB700AAD7BB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		5CD890051FE03538001DA054 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CD890061FE0356C001DA054 /* Deck.swift */,
+				5CD890081FE0357B001DA054 /* Card.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		5CE7B6CD1D950FB600AAD7BB = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +138,7 @@
 		5CE7B6D81D950FB700AAD7BB /* BenkyoSpike */ = {
 			isa = PBXGroup;
 			children = (
+				5CD890051FE03538001DA054 /* Models */,
 				5CA2E9571DE20BE000E2929D /* User Interface */,
 				5CE7B6D91D950FB700AAD7BB /* AppDelegate.swift */,
 				5CA2E9581DE20BF300E2929D /* Controllers */,
@@ -132,6 +148,7 @@
 				5CF2BE7E1E3C414200B7029A /* Bridging-Header.h */,
 				5CE7B6E01D950FB700AAD7BB /* Assets.xcassets */,
 				5CE7B6E51D950FB700AAD7BB /* Info.plist */,
+				5CD8900A1FE17E7C001DA054 /* Cards.plist */,
 			);
 			path = BenkyoSpike;
 			sourceTree = "<group>";
@@ -215,6 +232,7 @@
 				5CA2E9561DE1AB7900E2929D /* DeckCardBackView.xib in Resources */,
 				5CE7B6E41D950FB700AAD7BB /* LaunchScreen.storyboard in Resources */,
 				5C9CE6BB1D9A39F70047492B /* DeckCardFrontView.xib in Resources */,
+				5CD8900B1FE17E7D001DA054 /* Cards.plist in Resources */,
 				5CE7B6E11D950FB700AAD7BB /* Assets.xcassets in Resources */,
 				5CA2E95D1DE21DE600E2929D /* DeckCardCell.xib in Resources */,
 				5CE7B6DF1D950FB700AAD7BB /* Main.storyboard in Resources */,
@@ -245,9 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD890071FE0356C001DA054 /* Deck.swift in Sources */,
 				5C9CE6B31D9545E00047492B /* DeckTableViewCell.swift in Sources */,
 				5CE7B6DC1D950FB700AAD7BB /* MainViewController.swift in Sources */,
 				5CE7B6DA1D950FB700AAD7BB /* AppDelegate.swift in Sources */,
+				5CD890091FE0357B001DA054 /* Card.swift in Sources */,
 				5C27105A1E8A7DEB00A3B8E5 /* TestController.swift in Sources */,
 				5CA2E95B1DE2125C00E2929D /* DeckCardCell.swift in Sources */,
 				5C9CE6B91D97691C0047492B /* DeckCollectionViewLayout.swift in Sources */,

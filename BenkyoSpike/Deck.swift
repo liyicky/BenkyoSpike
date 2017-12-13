@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class Deck {
+    
+    func loadDeck(deckName:String) {
+        do {
+            
+        }
+    }
+}
+
+

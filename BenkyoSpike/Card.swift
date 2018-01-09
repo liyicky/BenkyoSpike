@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+struct Card {
+    let frontText:String
+    let backText:String
+    
+    init(dict:NSDictionary) throws {
+        guard let front = dict["front"] as? String else {
+            throw CardParseError.failed("no front value found")
+        }
+        guard let back = dict["back"] as? String else {
+            throw CardParseError.failed("no back value found")
+        }
+        frontText = front
+        backText = back
+    }
+}
+
+
+enum CardParseError:Error {
+    case failed( _:String)
+}

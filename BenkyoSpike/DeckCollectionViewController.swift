@@ -9,9 +9,6 @@
 import UIKit
 import AVFoundation
 
-let cards = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ"]
-
-
 class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
     
     
@@ -164,13 +161,13 @@ extension DeckCollectionViewController:UICollectionViewDelegate {
 extension DeckCollectionViewController:UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cards.count
+        return Deck.shared.cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeckCardCell.identifier, for: indexPath as IndexPath) as! DeckCardCell
         //if cell.flipped { cell.flipCard() }
-        cell.cardFront.frontText.text = cards[indexPath.item]
+        cell.cardFront.frontText.text = Deck.shared.cards[indexPath.item].frontText
         return cell
     }
 }

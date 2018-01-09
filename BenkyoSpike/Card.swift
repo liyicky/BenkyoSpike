@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct Card {
+class Card {
     let frontText:String
     let backText:String
+    var flipped = false
     
     init(dict:NSDictionary) throws {
         guard let front = dict["front"] as? String else {

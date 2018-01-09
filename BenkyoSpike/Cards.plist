@@ -10,27 +10,27 @@
 	</dict>
 	<dict>
 		<key>front</key>
-		<string>猫</string>
+		<string>魚</string>
 		<key>back</key>
-		<string>犬</string>
+		<string>鳥</string>
 	</dict>
 	<dict>
 		<key>front</key>
-		<string>猫</string>
+		<string>豚</string>
 		<key>back</key>
-		<string>犬</string>
+		<string>牛</string>
 	</dict>
 	<dict>
 		<key>front</key>
-		<string>猫</string>
+		<string>花</string>
 		<key>back</key>
-		<string>犬</string>
+		<string>木</string>
 	</dict>
 	<dict>
 		<key>front</key>
-		<string>猫</string>
+		<string>森</string>
 		<key>back</key>
-		<string>犬</string>
+		<string>車</string>
 	</dict>
 </array>
 </plist>

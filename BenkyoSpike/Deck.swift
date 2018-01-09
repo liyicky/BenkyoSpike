@@ -10,10 +10,13 @@ import Foundation
 
 class Deck {
     static let shared = Deck()
-    var cards:[Card] = []
+    
+    
+    private var _cards:[Card] = []
+    var cards:[Card] { return _cards }
     
     private init() {
-        cards = try! loadDeck(deckName: "Cards")
+        _cards = try! loadDeck(deckName: "Cards")
     }
     private func loadDeck(deckName:String) throws -> [Card]{
         guard let filepath = Bundle.main.path(forResource: deckName, ofType: "plist"),
@@ -25,6 +28,9 @@ class Deck {
             return try Card(dict: dict)
         })
         
+    }
+    func clear(){
+        _cards = []
     }
 }
 

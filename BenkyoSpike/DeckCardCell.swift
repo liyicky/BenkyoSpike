@@ -27,7 +27,16 @@ class DeckCardCell: UICollectionViewCell {
     
     var cardFront = DeckCardFrontView.Card()
     var cardBack  = DeckCardBackView.Card()
-    var flipped   = true
+    var flipped:Bool {
+        return card?.flipped ?? false
+    }
+    var card:Card! {
+        didSet{
+            cardFront.frontText.text = card.frontText
+            cardBack.backText.text = card.backText
+            doFlipAnimation()
+        }
+    }
     
     
     
@@ -67,11 +76,16 @@ class DeckCardCell: UICollectionViewCell {
     
     @objc func tapped() {
         NSLog("\(DeckCardCell.identifier) :Tapped!")
-        flipCard(animated: true)
+        flipCard()
     }
     
     
-    func flipCard(animated:Bool=false) {
+    func flipCard() {
+        
+        card.flipped = !card.flipped
+        doFlipAnimation(true)
+    }
+    func doFlipAnimation(_ animated:Bool=false){
         let dur:TimeInterval = animated ? 0.5 : 0
         if flipped {
             UIView.transition(from: cardBack, to: cardFront, duration: dur, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: nil)
@@ -79,7 +93,10 @@ class DeckCardCell: UICollectionViewCell {
             UIView.transition(from: cardFront, to: cardBack , duration: dur, options: UIViewAnimationOptions.transitionFlipFromRight, completion: nil)
             
         }
-        flipped = !flipped
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        doFlipAnimation()
     }
     
 }

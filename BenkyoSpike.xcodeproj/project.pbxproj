@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C27105A1E8A7DEB00A3B8E5 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2710591E8A7DEA00A3B8E5 /* TestController.swift */; };
+		5C465F0220047BE2009A1D3C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C465F0120047BE2009A1D3C /* Server.swift */; };
 		5C9CE6B31D9545E00047492B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CE6B21D9545E00047492B /* DeckTableViewCell.swift */; };
 		5C9CE6B51D9550180047492B /* DeckCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CE6B41D9550180047492B /* DeckCollectionViewController.swift */; };
 		5C9CE6B71D9555D10047492B /* DeckCardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CE6B61D9555D10047492B /* DeckCardFrontView.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		5C2710591E8A7DEA00A3B8E5 /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		5C465F0120047BE2009A1D3C /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		5C9CE6B21D9545E00047492B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		5C9CE6B41D9550180047492B /* DeckCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckCollectionViewController.swift; sourceTree = "<group>"; };
 		5C9CE6B61D9555D10047492B /* DeckCardFrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckCardFrontView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				5CD890061FE0356C001DA054 /* Deck.swift */,
 				5CD890081FE0357B001DA054 /* Card.swift */,
+				5C465F0120047BE2009A1D3C /* Server.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				5CA2E95B1DE2125C00E2929D /* DeckCardCell.swift in Sources */,
 				5C9CE6B91D97691C0047492B /* DeckCollectionViewLayout.swift in Sources */,
 				5CF2BE7A1E3C3E2600B7029A /* DatabaseThing.swift in Sources */,
+				5C465F0220047BE2009A1D3C /* Server.swift in Sources */,
 				5CA2E9551DE1AB7900E2929D /* DeckCardBackView.swift in Sources */,
 				5C9CE6B51D9550180047492B /* DeckCollectionViewController.swift in Sources */,
 				5CE7B6EC1D952A7600AAD7BB /* DecksTableViewController.swift in Sources */,

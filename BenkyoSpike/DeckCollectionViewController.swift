@@ -13,7 +13,7 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     //#MARK: IB Outlets
-    @IBOutlet var cardsCV:UICollectionView?
+    @IBOutlet weak var cardsCV:UICollectionView!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var listenButton: UIButton!
     @IBOutlet weak var quizButton: UIButton!
@@ -35,10 +35,12 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         
         
-        cardsCV!.register(DeckCardCell.nib, forCellWithReuseIdentifier: DeckCardCell.identifier)
-        cardsCV!.delegate = self
-        cardsCV!.dataSource = self
-        cardsCV!.collectionViewLayout = layout
+        cardsCV.register(DeckCardCell.nib, forCellWithReuseIdentifier: DeckCardCell.identifier)
+        cardsCV.delegate = self
+        cardsCV.dataSource = self
+        cardsCV.collectionViewLayout = layout
+        let horizontalPadding = (UIScreen.main.bounds.width - 200) / 2
+        cardsCV.contentInset =  UIEdgeInsets(top: 0, left: 100, bottom: 0, right: horizontalPadding)
         
         self.listenButton.addTarget(self, action: #selector(self.listenTapped), for: .touchUpInside)
         self.quizButton.addTarget(self, action: #selector(self.startQuiz), for: .touchUpInside)

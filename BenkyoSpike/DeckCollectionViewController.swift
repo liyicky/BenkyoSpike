@@ -27,6 +27,7 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
     var synth: AVSpeechSynthesizer!
     var recordFile: URL!
     var activeIndex:Int?
+    var currentCard: Card?
 
     
     //#MARK: Overrides
@@ -136,18 +137,15 @@ class DeckCollectionViewController: UIViewController, AVAudioRecorderDelegate {
     
     @objc func listenTapped() {
         
-        let testUtterance = AVSpeechUtterance(string: "僕の海は猫になるだ")
+        let cardText = currentCard?.backText
+        let testUtterance = AVSpeechUtterance(string: cardText!)
         testUtterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
         testUtterance.rate = 0.3
         synth.speak(testUtterance)
     }
     
     @objc func startQuiz() {
-//        cardsCV?.scrollToItem(at: IndexPath(row: 0, section: 0),
-//                                          at: .top,
-//                                          animated: true)
-//        cardsCV?.contentOffset.x = 0
-        cardsCV?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+         cardsCV?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         
     }
 
@@ -170,9 +168,23 @@ extension DeckCollectionViewController:UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeckCardCell.identifier, for: indexPath as IndexPath) as! DeckCardCell
         //if cell.flipped { cell.flipCard() }
         
+        currentCard = Deck.shared.cards[indexPath.item]
         let card = Deck.shared.cards[indexPath.item]
         cell.card = card
         
         return cell
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
+        
+        print(visibleIndexPath)
     }
 }
